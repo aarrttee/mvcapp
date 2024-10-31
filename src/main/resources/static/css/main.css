@@ -1,0 +1,56 @@
+body {
+    /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;*/
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+.main-footer {
+    color: #999;
+    padding: 32px 0;
+}
+
+.add-post {
+    margin: 32px 0;
+}
+
+.all-posts {
+    margin: 32px 0;
+}
+
+.post {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.post-body {
+    padding-right: 16px;
+}
+
+.post-title {
+    margin-top: 0;
+}
+
+.post-tools {
+    padding-left: 16px;
+}
+
+.post-tools form {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: unset;
+    min-width: unset;
+}
+
+.post-tools .btn {
+    padding: 8px;
+    border: 1px solid #000;
+    font-weight: normal;
+    line-height: 1;
+    font-size: 14px;
+    margin: 0 0 12px;
+}

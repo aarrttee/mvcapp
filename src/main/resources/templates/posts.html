@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<div th:replace="~{head :: head}"></div>
+<body>
+    <div class="container">
+        <div class="all-posts">
+            <h1>All posts</h1>
+
+            <div th:each="item : ${posts}" class="post">
+                <div class="post-body">
+                    <h4 th:text="${item.title}" class="post-title"></h4>
+                    <p th:text="${item.content}"></p>
+                </div>
+                <div class="post-tools">
+                    <a th:href="@{/posts/{id}/edit(id=${item.id})}" class="btn btn-light">Edit</a>
+                    <form th:action="@{/posts/{id}(id=${item.id})}" th:method="post">
+                        <input type="hidden" name="_method" value="delete" />
+                        <button type="submit" class="btn btn-light">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="add-post">
+            <h2>Add New Post</h2>
+
+            <form th:action="@{/posts}" th:object="${newPost}" method="post">
+                <div class="mb-3">
+                    <label for="titleInput" class="form-label">Title</label>
+                    <input class="form-control" id="titleInput" th:field="*{title}">
+                </div>
+                <div class="mb-3">
+                    <label for="contentInput" class="form-label">Content</label>
+                    <textarea th:field="*{content}" id="contentInput" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Add Post</button>
+            </form>
+        </div>
+    </div>
+    <div th:replace="~{footer :: footer}"></div>
+</body>
+</html>
